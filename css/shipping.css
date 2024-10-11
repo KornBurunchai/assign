@@ -1,0 +1,214 @@
+.navbar {
+    display: flex;
+    background-color: rgb(222, 183, 222);
+    color: #000;
+    padding: 1rem;
+}
+
+.navbar ul {
+    font-size: 20px;
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    list-style: none;
+}
+
+.navbar ul li {
+    margin: 0 1rem;
+}
+
+.navbar ul li a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.navbar ul li a:hover {
+    color: rgb(208, 147, 208);
+}
+
+.form-container {
+    background-color: #f9d2e1;
+    padding: 20px;
+}
+
+.background-box {
+    background-color: white;
+    height: 70px;
+    line-height: 70px;
+    display: flex;
+}
+
+.form-container h2 {
+    font-size: 18px;
+    color: #000;
+    margin-bottom: 15px;
+}
+
+.radio-group {
+    margin-bottom: 20px;
+}
+
+.radio-group label {
+    margin-right: 15px;
+    font-size: 16px;
+    color: #000;
+}
+
+.radio-group input[type="radio"] {
+    margin-right: 10px;
+}
+
+.payment-methods {
+    margin-bottom: 20px;
+}
+
+/* .address-section {
+    margin-bottom: 20px;
+} */
+
+.address-container {
+    background-color: #fbcbdd;
+    padding: 10px; 
+    /* border-radius: 8px; 
+    display: flex;
+    flex-direction: column;  */
+}
+
+/* .address-box {
+    background-color: white;
+    border: 1px solid #ccc;
+    padding: 10px;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+} */
+
+.address-info {
+    background-color: #fcedf6;
+    border-radius: 8px;
+    padding: 20px;
+    font-size: 18px;
+    line-height: 50px;
+
+}
+
+.add-address-btn {
+    display: inline-block;
+    background-color: #dedcdc;
+    color: #000000;
+    padding: 5px 10px;
+    border-radius: 5px;
+    margin-top: 10px;
+    cursor: pointer;
+}
+
+.add-address-btn:hover {
+    background-color: #fd8dce;
+}
+
+.address-action-buttons {
+    display: flex;
+    gap: 5px;
+}
+
+.edit-btn,
+.delete-btn {
+    background-color: #fbcbdd;
+    border: none;
+    cursor: pointer;
+}
+
+.edit-btn:hover,
+.delete-btn:hover {
+    background-color: #e91e63;
+}
+
+/* Modal Styles */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+.modal-content {
+    background-color: #fff;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 50%;
+}
+
+.form-input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-bottom: 15px;
+    box-sizing: border-box;
+}
+
+textarea {
+    height: 80px;
+    resize: none;
+}
+
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    cursor: pointer;
+}
+
+.form-buttons {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+}
+
+.form-buttons button {
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.save-btn {
+    background-color: #fd8dce;
+    color: #fff;
+}
+
+.save-btn:hover {
+    background-color: #d81b60;
+}
+
+.back-btn {
+    background-color: #ccc;
+}
+
+.back-btn:hover {
+    background-color: #bbb;
+}
+
+footer {
+    padding: 1rem;
+    text-align: center;
+    background-color: rgb(222, 183, 222);
+}
+
+@media screen and (max-width: 768px) {
+    .form-container {
+        max-width: 100%;
+        padding: 15px;
+    }
+}
