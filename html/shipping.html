@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="th">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>เลือกวิธีการจัดส่ง</title>
+    <link rel="stylesheet" href="/css/shipping.css">
+</head>
+
+<body>
+
+    <div class="navbar">
+        <ul>
+            <li><a href="index.html">หน้าหลัก</a></li>
+            <li><a href="product.html">สินค้า</a></li>
+            <li><a href="cart.html"><img src="/img/basket-shopping-simple.png" alt="Add to Cart"
+                        style="width: 24px;"></a></li>
+        </ul>
+    </div>
+
+    <div class="form-container">
+        <h2>เลือกวิธีการจัดส่ง</h2>
+        <div class="background-box">
+            <div class="radio-group">
+                <label>
+                    <input type="radio" name="shipping" value="home_delivery">
+                    จัดส่งไปยังที่อยู่
+                </label>
+                <label>
+                    <input type="radio" name="shipping" value="self_pickup"> รับสินค้าด้วยตัวเอง
+                </label>
+            </div>
+        </div>
+
+        <h2>วิธีชำระเงิน</h2>
+        <div class="background-box">
+            <div class="radio-group payment-methods">
+                <label>
+                    <input type="radio" name="payment" value="online_transfer"> ชำระเงินปลายทาง
+                </label>
+                <label>
+                    <input type="radio" name="payment" value="bank"> ธนาคาร
+                </label>
+            </div>
+        </div>
+
+        <h2>ที่อยู่สำหรับจัดส่ง</h2>
+        <div class="address-section">
+            <div class="address-container">
+                <div class="address-box">
+                    <div class="address-info" >
+                        <b>ชื่อ : </b>กมล เมืองพุทธ<br>
+                        <b>ที่อยู่สำหรับจัดส่ง : </b> 123 ต.หน้าเมือง อ.เมือง จ.ปราจีนบุรี<br>
+                        <b>วิธีการจัดส่ง : </b>จัดส่งตามที่อยู่<br>
+                        <b>รูปแบบการชำระเงิน : </b>ธนาคาร<br>
+                        <b>เบอร์โทรศัพท์ : </b>0891936421<br>
+                    </div>
+                </div>
+                <div class="add-address-btn" onclick="openModal()">+ เพิ่มที่อยู่</div>
+                <div class="address-action-buttons">
+                    <button class="edit-btn"><img src="/img/save.png" alt="Edit" style="width: 20px;"></button>
+                    <button class="delete-btn"><img src="/img/cancel.png" alt="Delete" style="width: 20px;"></button>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- Modal -->
+        <div id="addressModal" class="modal">
+            <div class="modal-content">
+                <span class="close" onclick="closeModal()">&times;</span>
+                <h2>กรอกข้อมูลรายละเอียดที่อยู่</h2>
+
+                <div class="form-group">
+                    <label for="fullName">ชื่อ-สกุล:</label>
+                    <input type="text" id="fullName" placeholder="กรอกชื่อนามสกุล">
+                </div><br>
+
+
+
+                <!-- <div class="form-group">
+                    <label for="province">ชื่อจังหวัด:</label>
+                    <input type="text" id="province" placeholder="กรอกชื่อจังหวัด">
+                </div>
+
+                <div class="form-group">
+                    <label for="district">เขต/อำเภอ:</label>
+                    <input type="text" id="district" placeholder="กรอกเขต/อำเภอ">
+                </div>
+
+                <div class="form-group">
+                    <label for="subdistrict"> แขวน/ตำบล:</label>
+                    <input type="text" id="subdistrict" placeholder="กรอกแขวน/ตำบล">
+                </div> -->
+
+                <div class="form-group">
+                    <label for="address">ที่อยู่:</label>
+                    <textarea id="address" placeholder="กรอกที่อยู่ของคุณ"></textarea>
+                </div><br>
+
+                <div class="form-group">
+                    <label for="phone">เบอร์โทรศัพท์:</label>
+                    <input type="text" id="phone" placeholder="กรอกเบอร์โทรศัพท์">
+                </div><br>
+
+                <div class="modal-buttons">
+                    <button onclick="saveAddress()">บันทึก</button>
+                    <button class="back-btn">กลับ</button>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="form-buttons">
+            <a href="confirm.html"><button class="save-btn">ยืนยัน</button></a>
+            <button class="back-btn">กลับ</button>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 ร้านค้าออนไลน์. สงวนลิขสิทธิ์.</p>
+    </footer>
+
+    <script>
+        let currentAddressData = null;
+
+        function openModal() {
+            document.getElementById("addressModal").style.display = "block";
+        }
+
+        function closeModal() {
+            document.getElementById("addressModal").style.display = "none";
+        }
+
+        function saveAddress() {
+            const fullName = document.getElementById("fullName").value;
+            const phone = document.getElementById("phone").value;
+            const province = document.getElementById("province").value;
+            const district = document.getElementById("district").value;
+            const subdistrict = document.getElementById("subdistrict").value;
+            const address = document.getElementById("address").value;
+
+            currentAddressData = {
+                fullName,
+                phone,
+                province,
+                district,
+                subdistrict,
+                address
+            };
+
+            document.getElementById("addressDisplay").value =
+                `ชื่อ: ${fullName}\nเบอร์: ${phone}\nจังหวัด: ${province}\nเขต/อำเภอ: ${district}\nตำบล: ${subdistrict}\nที่อยู่: ${address}`;
+
+            closeModal();
+
+            document.querySelector(".edit-btn").style.display = "inline-block";
+        }
+
+        function editAddress() {
+            if (currentAddressData) {
+                document.getElementById("fullName").value = currentAddressData.fullName;
+                document.getElementById("phone").value = currentAddressData.phone;
+                document.getElementById("province").value = currentAddressData.province;
+                document.getElementById("district").value = currentAddressData.district;
+                document.getElementById("subdistrict").value = currentAddressData.subdistrict;
+                document.getElementById("address").value = currentAddressData.address;
+
+                openModal();
+            }
+        }
+
+        function deleteAddress() {
+            document.getElementById("addressDisplay").value = "";
+            currentAddressData = null;
+            document.querySelector(".edit-btn").style.display = "none";
+        }
+
+        window.onclick = function (event) {
+            var modal = document.getElementById("addressModal");
+            if (event.target == modal) {
+                closeModal();
+            }
+        }
+    </script>
+
+</body>
+
+</html>
