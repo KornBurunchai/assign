@@ -17,6 +17,7 @@ body {
     background-color: #E396C4;
     color: #000;
     height: auto;
+    
   }
   
   ul {
@@ -237,11 +238,15 @@ footer {
 }
 .details{
     margin-left: 20px;
+    height: auto;
 }
 .details-buttom{
     display: flex;
 }
 
+.details h2{
+    font-size: 18px;
+}
 
 /* แสดง modal เมื่อ checkbox ถูกเลือก */
 .modal-toggle:checked + .modal {

@@ -14,6 +14,7 @@ body {
   background-color: #E396C4;
   color: #000;
   height: auto;
+
 }
 
 ul {
@@ -46,7 +47,7 @@ ul li a:hover {
 }
 
 .sidenav {
-  width: 250px;
+  max-width: 15%;
   z-index: 1;
   left: 0;
   background-color: #efd1e9;
@@ -72,6 +73,7 @@ ul li a:hover {
   /* Same as the width of the sidenav */
   /* Increased text to enable scrolling */
   padding: 0px 10px;
+  max-width: 85%;
   /* border: 2px solid red; */
 }
 
@@ -96,6 +98,7 @@ footer {
   grid-template-columns: repeat(4, 1fr);
   gap: 20px;
   margin-top: 20px;
+
 }
 
 .product {
@@ -215,6 +218,17 @@ footer {
   cursor: pointer;
   font-size: 1.5rem;
 }
+
+.details{
+  margin-left: 20px;
+  height: auto;
+}
+
+.details h2{
+  font-size: 18px;
+}
+
+
 .details-buttom{
   display: flex;
 }
@@ -277,5 +291,11 @@ footer {
 
 .all_body .sidenav, .all_body .main {
     width: 100%; /* ให้ div ด้านในกว้างเต็มที่ */
+}
+.main{
+  max-width:100%;
+}
+.sidenav{
+  max-width: 100%;
 }
 }
