@@ -73,45 +73,32 @@
 
         <!-- Modal -->
         <div id="addressModal" class="modal">
-            <div class="modal-content">
-                <span class="close" onclick="closeModal()">&times;</span>
-                <h2>กรอกข้อมูลรายละเอียดที่อยู่</h2>
-
-                <div class="form-group">
-                    <label for="fullName">ชื่อ-สกุล:</label>
-                    <input type="text" id="fullName" placeholder="กรอกชื่อนามสกุล">
-                </div><br>
-
-
-
-                <!-- <div class="form-group">
-                    <label for="province">ชื่อจังหวัด:</label>
-                    <input type="text" id="province" placeholder="กรอกชื่อจังหวัด">
-                </div>
-
-                <div class="form-group">
-                    <label for="district">เขต/อำเภอ:</label>
-                    <input type="text" id="district" placeholder="กรอกเขต/อำเภอ">
-                </div>
-
-                <div class="form-group">
-                    <label for="subdistrict"> แขวน/ตำบล:</label>
-                    <input type="text" id="subdistrict" placeholder="กรอกแขวน/ตำบล">
-                </div> -->
-
-                <div class="form-group">
-                    <label for="address">ที่อยู่:</label>
-                    <textarea id="address" placeholder="กรอกที่อยู่ของคุณ"></textarea>
-                </div><br>
-
-                <div class="form-group">
-                    <label for="phone">เบอร์โทรศัพท์:</label>
-                    <input type="text" id="phone" placeholder="กรอกเบอร์โทรศัพท์">
-                </div><br>
-
-                <div class="modal-buttons">
-                    <button onclick="saveAddress()">บันทึก</button>
-                    <button class="back-btn">กลับ</button>
+            <!-- <div id="myModal" class="modal"> -->
+                <div class="modal-content">
+                    <span class="close">&times;</span>
+                    <h2>กรอกข้อมูลรายละเอียดที่อยู่</h2>
+                    <form>
+                        <label for="name">ชื่อ - นามสกุล</label>
+                        <input type="text" id="name" name="name"> <br>
+        
+                        <label for="phone">เบอร์โทรศัพท์</label>
+                        <input type="text" id="phone" name="phone"><br>
+        
+                        <label for="province">จังหวัด</label>
+                        <input type="text" id="province" name="province"><br>
+        
+                        <label for="district">เขต/อำเภอ</label>
+                        <input type="text" id="district" name="district"><br>
+        
+                        <label for="subdistrict">แขวง/ตำบล</label>
+                        <input type="text" id="subdistrict" name="subdistrict"><br>
+        
+                        <label for="address">ที่อยู่</label>
+                        <textarea id="address" name="address"></textarea>
+        
+                        <button type="submit" class="submit-btn">ยืนยัน</button>
+                        <button type="button" class="cancel-btn">ยกเลิก</button>
+                    </form>
                 </div>
             </div>
         </div>
