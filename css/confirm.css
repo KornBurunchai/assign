@@ -183,13 +183,23 @@ button:hover {
 }
 
 .actions .btn-confirm {
-    background-color: #e60023;
-    border: none;
-    cursor: pointer;
+    padding: 10px 20px;
+  background-color: #ff69b4; /* สีปุ่ม */
+  color: white;
+  font-size: 18px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  text-decoration: none;
+}
+.actions .btn-confirm  a{
+    text-decoration: none;
+    color: #fff;
 }
 
 .actions .btn-confirm:hover {
-    background-color: #c2031c;
+    background-color: #ff1493;
 
 }
 
