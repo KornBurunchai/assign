@@ -167,6 +167,21 @@ ul {
     line-height: 50px;
 
 }
+.address-action-buttons {
+    /*display: flex; /* ใช้ Flexbox */
+    align-items: left; /* จัดให้อยู่ตรงกลางแนวตั้ง */
+    margin-top: 10px; /* เพิ่มระยะห่างด้านบน */
+}
+
+.right-buttons {
+    margin-left: auto; /* ดันปุ่มขวาไปทางขวา */
+    display: flex; /* ใช้ Flexbox เพื่อให้ปุ่มในกลุ่มอยู่ติดกัน */
+}
+
+.edit-btn,
+.delete-btn {
+    margin-left: 10px; /* เพิ่มระยะห่างระหว่างปุ่มแก้ไขและลบ */
+}
 
 .add-address-btn {
     display: inline-block;
@@ -192,7 +207,7 @@ ul {
     background-color: #fbcbdd;
     border: none;
     cursor: pointer;
-    margin-left: 10px;
+    margin-left:8px;
     margin-top: 12px;
     margin-right: 10px;
 }
@@ -202,52 +217,39 @@ ul {
     background-color: #e91e63;
 }
 
-/* Modal Styles */
-.modal {
-    display: none; /* Hidden by default */
-    position: fixed; /* Stay in place */
-    z-index: 1; /* Sit on top */
-    left: 0;
-    top: 0;
-    width: 100%; /* Full width */
-    height: 100%; /* Full height */
-    overflow: auto;
-    background-color: rgba(0, 0, 0, 0.7); /* Black with opacity */
+/* ปรับแต่งขนาดของ modal */
+.modal-dialog {
+    max-width: 600px; /* ปรับขนาดสูงสุดของ modal */
 }
 
-/* Modal content */
+/* ปรับสีพื้นหลังของ modal */
 .modal-content {
-    background-color: #fff;
-    margin: 10% auto; /* Adjust modal to center vertically */
-    padding: 20px;
-    border: none; /* Remove border */
-    border-radius: 10px; /* Rounded corners */
-    width: 40%; /* Adjust modal width */
-    max-width: 600px; /* Maximum width for larger screens */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Add shadow */
-    position: relative;
+    background-color: #f8f9fa; /* เปลี่ยนสีพื้นหลัง */
+    border-radius: 10px; /* ปรับให้มุมโค้งมน */
 }
 
-/* Close button */
-.close {
-    position: absolute;
-    top: 10px;
-    right: 15px;
-    color: #aaa;
-    font-size: 28px;
-    font-weight: bold;
-    cursor: pointer;
+/* ปรับสไตล์ของปุ่มปิด (x) */
+.modal-header .close {
+    color: #e91e63; /* เปลี่ยนสีปุ่มปิด */
+    font-size: 24px; /* ปรับขนาดตัวอักษร */
 }
 
-.close:hover,
-.close:focus {
-    color: #e91e63; /* Change color on hover */
+/* ปรับสไตล์ปุ่ม */
+.modal-footer .btn-primary {
+    background-color: #e91e63; /* เปลี่ยนสีปุ่มยืนยัน */
+    border-color: #e91e63;
 }
+
+.modal-footer .btn-secondary {
+    background-color: #6c757d; /* เปลี่ยนสีปุ่มยกเลิก */
+}
+
 
 .form-buttons {
     display: flex;
     justify-content: flex-end;
     gap: 10px;
+    margin-top: 20px;
 }
 
 .form-buttons button {

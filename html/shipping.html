@@ -10,6 +10,9 @@
     <link
         href="https://fonts.googleapis.com/css2?family=K2D:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap"
         rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="/css/shipping.css">
 </head>
 
@@ -62,51 +65,92 @@
                         <b>เบอร์โทรศัพท์ : </b>0891936421<br>
                     </div>
                 </div>
-                <div class="add-address-btn" onclick="openModal()">+ เพิ่มที่อยู่</div>
-                <div class="address-action-buttons">
-                    <button class="edit-btn"><img src="/img/save.png" alt="Edit" style="width: 20px;"></button>
-                    <button class="delete-btn"><img src="/img/cancel.png" alt="Delete" style="width: 20px;"></button>
-                </div>
-            </div>
-        </div>
+                
 
 
         <!-- Modal -->
-        <div id="addressModal" class="modal">
-            <!-- <div id="myModal" class="modal"> -->
-                <div class="modal-content">
-                    <span class="close">&times;</span>
-                    <h2>กรอกข้อมูลรายละเอียดที่อยู่</h2>
-                    <form>
+        <!-- Button to Open the Modal -->
+        <div class="address-action-buttons">      
+            <button type="button" class="btn btn-secondary" data-toggle="modal" data-target="#addressModal" style="margin-top: 10px;">
+                + เพิ่มที่อยู่
+            </button>
+        
+            <div class="right-buttons"> <!-- เพิ่ม div ห่อหุ้มปุ่มขวา -->
+                <button class="edit-btn">
+                    <img src="/img/save.png" alt="Edit" style="width: 30px;">
+                </button>
+                <button class="delete-btn">
+                    <img src="/img/cancel.png" alt="Delete" style="width: 30px;">
+                </button>
+            </div>
+        </div>
+        
+
+
+<!-- The Modal -->
+<div class="modal fade" id="addressModal" tabindex="-1" role="dialog" aria-labelledby="addressModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <!-- Modal Header -->
+            <div class="modal-header">
+                <h5 class="modal-title" id="addressModalLabel">กรอกข้อมูลรายละเอียดที่อยู่</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            
+
+            <!-- Modal Body -->
+            <div class="modal-body">
+                <form>
+                    <div class="form-group">
                         <label for="name">ชื่อ - นามสกุล</label>
-                        <input type="text" id="name" name="name"> <br>
-        
+                        <input type="text" class="form-control" id="name" name="name">
+                    </div>
+
+                    <div class="form-group">
                         <label for="phone">เบอร์โทรศัพท์</label>
-                        <input type="text" id="phone" name="phone"><br>
-        
+                        <input type="text" class="form-control" id="phone" name="phone">
+                    </div>
+
+                    <div class="form-group">
                         <label for="province">จังหวัด</label>
-                        <input type="text" id="province" name="province"><br>
-        
+                        <input type="text" class="form-control" id="province" name="province">
+                    </div>
+
+                    <div class="form-group">
                         <label for="district">เขต/อำเภอ</label>
-                        <input type="text" id="district" name="district"><br>
-        
+                        <input type="text" class="form-control" id="district" name="district">
+                    </div>
+
+                    <div class="form-group">
                         <label for="subdistrict">แขวง/ตำบล</label>
-                        <input type="text" id="subdistrict" name="subdistrict"><br>
-        
+                        <input type="text" class="form-control" id="subdistrict" name="subdistrict">
+                    </div>
+
+                    <div class="form-group">
                         <label for="address">ที่อยู่</label>
-                        <textarea id="address" name="address"></textarea>
-        
-                        <button type="submit" class="submit-btn">ยืนยัน</button>
-                        <button type="button" class="cancel-btn">ยกเลิก</button>
-                    </form>
-                </div>
+                        <textarea class="form-control" id="address" name="address"></textarea>
+                    </div>
+                </form>
+            </div>
+
+            <!-- Modal Footer -->
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">ยกเลิก</button>
+                <button type="button" class="btn btn-primary" data-dismiss="modal">ยืนยัน</button>
+            </div>
+        </div>
+    </div>
+</div>
+                
             </div>
         </div>
 
 
         <div class="form-buttons">
             <a href="confirm.html"><button class="save-btn">ยืนยัน</button></a>
-            <a href="cart.html"></a><button class="back-btn">กลับ</button></a>
+            <a href="cart.html"><button class="back-btn">กลับ</button></a>
         </div>
     </div>
 
@@ -114,68 +158,6 @@
         <p>&copy; 2024 ร้านค้าออนไลน์. สงวนลิขสิทธิ์.</p>
     </footer>
 
-    <script>
-        let currentAddressData = null;
-
-        function openModal() {
-            document.getElementById("addressModal").style.display = "block";
-        }
-
-        function closeModal() {
-            document.getElementById("addressModal").style.display = "none";
-        }
-
-        function saveAddress() {
-            const fullName = document.getElementById("fullName").value;
-            const phone = document.getElementById("phone").value;
-            const province = document.getElementById("province").value;
-            const district = document.getElementById("district").value;
-            const subdistrict = document.getElementById("subdistrict").value;
-            const address = document.getElementById("address").value;
-
-            currentAddressData = {
-                fullName,
-                phone,
-                province,
-                district,
-                subdistrict,
-                address
-            };
-
-            document.getElementById("addressDisplay").value =
-                `ชื่อ: ${fullName}\nเบอร์: ${phone}\nจังหวัด: ${province}\nเขต/อำเภอ: ${district}\nตำบล: ${subdistrict}\nที่อยู่: ${address}`;
-
-            closeModal();
-
-            document.querySelector(".edit-btn").style.display = "inline-block";
-        }
-
-        function editAddress() {
-            if (currentAddressData) {
-                document.getElementById("fullName").value = currentAddressData.fullName;
-                document.getElementById("phone").value = currentAddressData.phone;
-                document.getElementById("province").value = currentAddressData.province;
-                document.getElementById("district").value = currentAddressData.district;
-                document.getElementById("subdistrict").value = currentAddressData.subdistrict;
-                document.getElementById("address").value = currentAddressData.address;
-
-                openModal();
-            }
-        }
-
-        function deleteAddress() {
-            document.getElementById("addressDisplay").value = "";
-            currentAddressData = null;
-            document.querySelector(".edit-btn").style.display = "none";
-        }
-
-        window.onclick = function (event) {
-            var modal = document.getElementById("addressModal");
-            if (event.target == modal) {
-                closeModal();
-            }
-        }
-    </script>
 
 </body>
 
