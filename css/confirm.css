@@ -108,8 +108,20 @@ button:hover {
     padding: 10px;
 }
 
+.actions .btn-back {
+    padding: 10px 20px;
+    background-color: #ffffff;
+    color: white;
+    font-size: 18px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
 .actions .btn-back a {
     text-decoration: none;
+    color: #000;
 }
 
 .actions .btn-back:hover {
