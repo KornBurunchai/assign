@@ -17,7 +17,6 @@
 </head>
 
 <body>
-
     <section class="navbar">
         <ul>
             <li><a href="../index.html">หน้าหลัก</a></li>
@@ -75,26 +74,48 @@
                         style="margin-top: 10px;">
                         + เพิ่มที่อยู่
                     </button>
-
-                    <div class="right-buttons"> <!-- เพิ่ม div ห่อหุ้มปุ่มขวา -->
-                        <button class="edit-btn">
-                            <img src="../img/save.png" alt="Edit" style="width: 30px;">
+                    <div class="right-buttons">
+                        <button class="edit-btn" data-toggle="modal" data-target="#addressModal">
+                            <img src="/img/save.png" alt="Edit" style="width: 30px;">
                         </button>
-                        <button class="delete-btn">
-                            <img src="../img/cancel.png" alt="Delete" style="width: 30px;">
-                        </button>
+                        <button class="delete-btn" data-toggle="modal" data-target="#confirmModal">
+                            <img src="/img/cancel.png" alt="Delete" style="width: 30px;">
                     </div>
                 </div>
-
-
+                
+                <!-- Button Modal delete -->
+                <div class="modal fade" id="confirmModal" tabindex="-1" role="dialog" aria-labelledby="confirmModalLabel" aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <!-- Modal Header -->
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="confirmModalLabel">คุณต้องการลบรายการนี้ใช่หรือไม่?</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                
+                            <!-- Modal Body -->
+                            <div class="modal-body">
+                                คุณแน่ใจใช่หรือไม่ว่าต้องการลบ?
+                            </div>
+                
+                            <!-- Modal Footer -->
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">ยกเลิก</button>
+                                <button type="button" class="btn btn-primary" data-dismiss="modal">ยืนยัน</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
                 <!-- The Modal -->
                 <div class="modal fade" id="addressModal" tabindex="-1" role="dialog"
                     aria-labelledby="addressModalLabel" aria-hidden="true">
                     <div class="modal-dialog" role="document">
-                        <div class="modal-content">
+                        <div class="modal-content" >
                             <!-- Modal Header -->
-                            <div class="modal-header">
+                            <div class="modal-header" >
                                 <h5 class="modal-title" id="addressModalLabel">กรอกข้อมูลรายละเอียดที่อยู่</h5>
                                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                     <span aria-hidden="true">&times;</span>
@@ -103,7 +124,7 @@
 
 
                             <!-- Modal Body -->
-                            <div class="modal-body">
+                            <div class="modal-body" >
                                 <form>
                                     <div class="form-group">
                                         <label for="name">ชื่อ - นามสกุล</label>
