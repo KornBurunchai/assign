@@ -41,7 +41,7 @@ ul li a:hover {
 }
 
 .all_body {
-  /* border: 2px solid red; */
+  /* border: 2px solid red;  */
   display: flex;
   height: 900px;
 }
@@ -75,12 +75,13 @@ ul li a:hover {
   padding: 0px 10px;
   max-width: 85%;
 
-  /* border: 2px solid red; */
+  
 }
 
 .container {
   padding: 20px;
   height: 100vh;
+  
 }
 
 .headline {
@@ -194,15 +195,16 @@ footer {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  max-width: 40%; /* ทำให้โมดอลไม่กว้างเกินไป */
+  max-width: 100%; /* ทำให้โมดอลไม่กว้างเกินไป */
   width: 450px;
-  max-height: 650px; /* จำกัดความสูง */
+  max-height: 90%; /* จำกัดความสูง */
   overflow-y: auto; /* เพิ่มการเลื่อนถ้าสูงเกิน */
-  background-color: rgb(245, 216, 242);
+  background-color: #fff;
   padding: 20px;
   box-shadow: 0 5px 15px rgba(0,0,0,0.3);
   z-index: 1000;
   border-radius: 8px;
+  border: 2px solid #E396C4;
 }
 
 .modal-img{
@@ -211,6 +213,7 @@ footer {
 
 .modal-content {
   width: 100%;
+  border: none;
 }
 
 .modal-toggle {
@@ -299,9 +302,18 @@ footer {
     width: 100%; /* ให้ div ด้านในกว้างเต็มที่ */
 }
 .main{
-  max-width:100%;
+  max-height: 100%;
+}
+.container{
+  height: auto;
 }
 .sidenav{
   max-width: 100%;
 }
+.modal .modal-content{
+
+  width: 500px;
+
+}
+
 }
