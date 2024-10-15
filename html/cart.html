@@ -26,7 +26,7 @@
         <li><a href="../index.html">หน้าหลัก</a></li>
         <li><a href="product.html">สินค้า</a></li>
         <li><a href="cart.html">ตะกร้าสินค้า</a></li>
-        <li><a href="shipping.html">ชำระเงิน</a></li>
+        <li><a href="confirm-payment.html">คำสั่งซื้อ</a></li>
       </ul>
     </section>
     <section class="all_body">
@@ -142,6 +142,16 @@
         let totalSection = document.querySelector(".total-section");
         totalSection.innerHTML = `ยอดรวมสินค้า: ฿${total.toFixed(2)} บาท`;
       }
+      // เพิ่มปุ่มสำหรับไปยังหน้าชำระเงิน
+      document
+        .querySelector(".next-button")
+        .addEventListener("click", function () {
+          let cart = localStorage.getItem("cart")
+            ? JSON.parse(localStorage.getItem("cart"))
+            : [];
+          localStorage.setItem("checkoutCart", JSON.stringify(cart)); // เก็บข้อมูลลงใน localStorage
+          window.location.href = "shipping.htm"; // ไปยังหน้าชำระเงิน
+        });
     </script>
 
     <footer>

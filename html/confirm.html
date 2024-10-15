@@ -1,86 +1,155 @@
 <!DOCTYPE html>
 <html lang="th">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>ยืนยันข้อมูลการจัดส่ง</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-        href="https://fonts.googleapis.com/css2?family=K2D:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap"
-        rel="stylesheet">
-    <link rel="stylesheet" href="../css/confirm.css">
-</head>
+      href="https://fonts.googleapis.com/css2?family=K2D:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../css/confirm.css" />
+  </head>
 
-<body>
+  <body>
     <section class="navbar">
-        <ul>
-            <li><a href="../index.html">หน้าหลัก</a></li>
-            <li><a href="product.html">สินค้า</a></li>
-            <li><a href="cart.html">ตะกร้าสินค้า</a></li>
-            <li><a href="shipping.html">ชำระเงิน</a></li>
-        </ul>
+      <ul>
+        <li><a href="../index.html">หน้าหลัก</a></li>
+        <li><a href="product.html">สินค้า</a></li>
+        <li><a href="cart.html">ตะกร้าสินค้า</a></li>
+        <li><a href="confirm-payment.html">คำสั่งซื้อ</a></li>
+      </ul>
     </section>
 
     <div class="container">
-        <h1 style="text-align: left;">ยืนยันข้อมูลการจัดส่ง</h1>
+      <h1 style="text-align: left">ยืนยันข้อมูลการจัดส่ง</h1>
 
-        <div class="info-box">
-            <b>ที่อยู่สำหรับจัดส่ง : </b> 123 ต.หน้าเมือง อ.เมือง จ.ปราจีนบุรี<br>
-            <b>วิธีการจัดส่ง : </b>จัดส่งตามที่อยู่<br>
-            <b>รูปแบบการชำระเงิน : </b>ธนาคาร<br>
-        </div>
+      <div class="info-box">
+        <b>ที่อยู่สำหรับจัดส่ง : </b> 123 ต.หน้าเมือง อ.เมือง จ.ปราจีนบุรี<br />
+        <b>วิธีการจัดส่ง : </b>จัดส่งตามที่อยู่<br />
+        <b>รูปแบบการชำระเงิน : </b>ธนาคาร<br />
+      </div>
 
-        <div class="order-details">
-            <table>
-                <thead>
-                    <tr>
-                        <th></th>
-                        <th>รายการสินค้า</th>
-                        <th>ราคา</th>
-                        <th>จำนวน</th>
-                        <th>ราคารวม</th>
-                        <th>แก้ไข</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td data-label="">
-                            <img src="../img/sk2.png" alt="สินค้า" width="90px">
-                        </td>
-                        <td data-label="รายการสินค้">มอยซ์เจอร์ไรเซอร์</td>
-                        <td data-label="ราคา">฿599</td>
-                        <td data-label="จำนวน">
-                            <div class="quantity-control">
-                                <button>-</button>
-                                <input type="text" value="1" readonly style="text-align: center;">
-                                <button>+</button>
-                            </div>
-                        </td>
-                        <td data-label="ราคารวม">฿599</td>
-                        <td data-label="แก้ไข">
-                            <button><img src="../img/bin.png" style="width: 25px;"></button>
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
-            
-        </div>
+      <div class="order-details">
+        <table>
+          <thead>
+            <tr>
+              <th></th>
+              <th>รายการสินค้า</th>
+              <th>ราคา</th>
+              <th>จำนวน</th>
+              <th>ราคารวม</th>
+              <th>แก้ไข</th>
+            </tr>
+          </thead>
+          <tbody id="order-table-body">
+            <!-- รายละเอียดสินค้า จะถูกเพิ่มที่นี่ผ่าน JavaScript -->
+          </tbody>
+        </table>
+      </div>
 
-        <div class="summary">
-            <b>จำนวนเงินรวม:</b>฿599
-            <b>จำนวนเงินรวมสุทธิ:</b> <span class="total-price">฿599</span>
-        </div>
+      <div class="summary">
+        <b>จำนวนเงินรวม:</b> <span id="total-amount">฿0</span>
+        <b>จำนวนเงินรวมสุทธิ:</b> <span class="total-price">฿0</span>
+      </div>
 
-        <div class="actions">
-            <button class="btn-back"><a href="shipping.html">กลับ</a></button>
-            <button class="btn-confirm"><a href="confirm-payment.html">ยืนยันการชำระเงิน</a></button>
-        </div>
+      <div class="actions">
+        <button class="btn-back"><a href="shipping.html">กลับ</a></button>
+        <button class="btn-confirm">ยืนยันการชำระเงิน</button>
+      </div>
     </div>
 
     <footer>
-        <p>&copy; 2024 ร้านค้าออนไลน์. สงวนลิขสิทธิ์.</p>
+      <p>&copy; 2024 ร้านค้าออนไลน์. สงวนลิขสิทธิ์.</p>
     </footer>
-</body>
+
+    <script>
+      // เมื่อโหลดหน้าเว็บเสร็จสิ้นให้แสดงสินค้าจาก localStorage
+      window.addEventListener("DOMContentLoaded", function () {
+        let checkoutCart = localStorage.getItem("checkoutCart")
+          ? JSON.parse(localStorage.getItem("checkoutCart"))
+          : [];
+        updateOrderDetails(checkoutCart);
+      });
+
+      // ฟังก์ชันสำหรับอัปเดตการแสดงผลของรายละเอียดการสั่งซื้อ
+      function updateOrderDetails(cart) {
+        let orderTableBody = document.getElementById("order-table-body");
+        orderTableBody.innerHTML = ""; // เคลียร์เนื้อหาก่อน
+
+        let total = 0;
+        cart.forEach(function (product) {
+          let row = document.createElement("tr");
+          row.innerHTML = `
+                    <td data-label="">
+                        <img src="${product.image}" alt="${
+            product.name
+          }" width="90px">
+                    </td>
+                    <td data-label="รายการสินค้">${product.name}</td>
+                    <td data-label="ราคา">฿${product.price}</td>
+                    <td data-label="จำนวน">${product.quantity}</td>
+                    <td data-label="ราคารวม">฿${(
+                      product.price * product.quantity
+                    ).toFixed(2)}</td>
+                    <td data-label="แก้ไข">
+                        <button><img src="../img/bin.png" style="width: 25px;"></button>
+                    </td>
+                `;
+          orderTableBody.appendChild(row);
+          total += product.price * product.quantity;
+        });
+
+        // แสดงจำนวนเงินรวม
+        document.getElementById("total-amount").textContent = `฿${total.toFixed(
+          2
+        )}`;
+        document.querySelector(".total-price").textContent = `฿${total.toFixed(
+          2
+        )}`;
+      }
+
+      document
+        .querySelector(".btn-confirm")
+        .addEventListener("click", function () {
+          let checkoutCart = localStorage.getItem("checkoutCart")
+            ? JSON.parse(localStorage.getItem("checkoutCart"))
+            : [];
+
+          // สร้างข้อมูลการสั่งซื้อใหม่
+          const orderId = Date.now(); // ใช้ timestamp เป็นหมายเลขการสั่งซื้อ
+          const orderDetails = {
+            orderId: orderId,
+            items: checkoutCart,
+            total: checkoutCart.reduce(
+              (sum, product) => sum + product.price * product.quantity,
+              0
+            ),
+          };
+
+          // ดึงข้อมูลการสั่งซื้อเดิม
+          let allOrders = localStorage.getItem("allOrders")
+            ? JSON.parse(localStorage.getItem("allOrders"))
+            : [];
+
+          // เพิ่มข้อมูลการสั่งซื้อใหม่ลงในอาเรย์
+          allOrders.push(orderDetails);
+
+          // เก็บข้อมูลการสั่งซื้อทั้งหมดกลับไปใน localStorage
+          localStorage.setItem("allOrders", JSON.stringify(allOrders));
+
+          // ลบข้อมูล checkoutCart
+          localStorage.removeItem("cart");
+
+          // ไปยังหน้ายืนยันการชำระเงิน
+          window.location.href = "confirm-payment.html";
+        });
+    </script>
+
+    <footer>
+      <p>&copy; 2024 ร้านค้าออนไลน์. สงวนลิขสิทธิ์.</p>
+    </footer>
+  </body>
 </html>

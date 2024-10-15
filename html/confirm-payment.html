@@ -1,67 +1,116 @@
 <!DOCTYPE html>
 <html lang="th">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>ตะกร้าสินค้า - ร้านค้า E-commerce</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-        href="https://fonts.googleapis.com/css2?family=K2D:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap"
-        rel="stylesheet">
-    <link rel="stylesheet" href="/css/index.css">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-    <link rel="stylesheet" href="../css/comfitm-css.css">
-</head>
+      href="https://fonts.googleapis.com/css2?family=K2D:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/css/index.css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="../css/comfitm-css.css" />
+  </head>
 
-<body>
+  <body>
     <section class="navbar">
-        <ul>
-            <li><a href="../index.html">หน้าหลัก</a></li>
-            <li><a href="product.html">สินค้า</a></li>
-            <li><a href="cart.html">ตะกร้าสินค้า</a></li>
-            <li><a href="shipping.html">ชำระเงิน</a></li>
-        </ul>
+      <ul>
+        <li><a href="../index.html">หน้าหลัก</a></li>
+        <li><a href="product.html">สินค้า</a></li>
+        <li><a href="cart.html">ตะกร้าสินค้า</a></li>
+        <li><a href="confirm-payment.html">คำสั่งซื้อ</a></li>
+      </ul>
     </section>
     <section class="all_body">
-        <section class="cret-table">
-            <table class="cart-table">
-                <thead>
-                    <tr>
-                        <th>สั่งซื้อสินค้า</th>
-                        <th>สินค้า</th>
-                        <th>สถานะ</th>
-                        <th>แก้ไข</th>
-
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td style="text-align: start;">
-                            <p style="line-height: 10px;">เลขที่สั่งซื้อ : 12345</p>
-                            <p style="line-height: 10px;">ราคารวม : 599</p>
-                        </td>
-                        <td>
-                            <img src="../img/Beauty Of Joseon Green Plum Refreshing Toner Aha + Bha 150ml.png" alt=""
-                                style="max-height: 150px; max-width: 200px;">
-                        </td>
-                        <td>เสร็จสมบูรณ์</td>
-                        <td>
-                            รายละเอียด
-                        </td>
-                    </tr>
-                    <!-- สามารถเพิ่มสินค้ารายการใหม่ได้ตามนี้ -->
-                </tbody>
-            </table>
-
-        </section>
+      <section class="cret-table">
+        <table class="cart-table">
+          <thead>
+            <tr>
+              <th>สั่งซื้อสินค้า</th>
+              <th>สินค้า</th>
+              <th>สถานะ</th>
+              <th>แก้ไข</th>
+            </tr>
+          </thead>
+          <tbody id="order-table-body">
+            <!-- รายละเอียดการสั่งซื้อ จะถูกเพิ่มที่นี่ผ่าน JavaScript -->
+          </tbody>
+        </table>
+      </section>
     </section>
 
-    <footer>
-        <p>&copy; 2024 ร้านค้าออนไลน์. สงวนลิขสิทธิ์.</p>
-    </footer>
-</body>
+    <script>
+      // เมื่อโหลดหน้าเว็บเสร็จสิ้นให้แสดงข้อมูลการสั่งซื้อทั้งหมดจาก localStorage
+      window.addEventListener("DOMContentLoaded", function () {
+        let allOrders = localStorage.getItem("allOrders")
+          ? JSON.parse(localStorage.getItem("allOrders"))
+          : [];
+        displayOrderDetails(allOrders);
+      });
 
+      // ฟังก์ชันสำหรับแสดงรายละเอียดการสั่งซื้อ
+      function displayOrderDetails(orders) {
+        let orderTableBody = document.getElementById("order-table-body");
+        orderTableBody.innerHTML = ""; // เคลียร์เนื้อหาก่อน
+
+        // เช็คว่ามีรายการสั่งซื้อหรือไม่
+        if (orders.length === 0) {
+          let emptyRow = document.createElement("tr");
+          emptyRow.innerHTML = `
+            <td colspan="4" style="text-align: center; color: red;">
+                ไม่มีรายการสั่งซื้อ
+            </td>
+        `;
+          orderTableBody.appendChild(emptyRow);
+        } else {
+          orders.forEach(function (order) {
+            let row = document.createElement("tr");
+            row.innerHTML = `
+                <td style="text-align: start;">
+                    <p style="line-height: 10px;">เลขที่สั่งซื้อ : ${
+                      order.orderId
+                    }</p>
+                    <p style="line-height: 10px;">ราคารวม : ฿${order.total.toFixed(
+                      2
+                    )}</p>
+                </td>
+                <td>
+                    ${order.items
+                      .map(
+                        (product) =>
+                          `<img src="${product.image}" alt="${product.name}" style="max-height: 150px; max-width: 200px;">`
+                      )
+                      .join("")}
+                </td>
+                <td>เสร็จสมบูรณ์</td>
+                <td>
+                    <button onclick="showDetails(${
+                      order.orderId
+                    })">รายละเอียด</button>
+                </td>
+            `;
+            orderTableBody.appendChild(row);
+          });
+        }
+      }
+
+      // ฟังก์ชันสำหรับแสดงรายละเอียดเพิ่มเติม
+      function showDetails(orderId) {
+        alert("แสดงรายละเอียดสำหรับเลขที่สั่งซื้อ: " + orderId);
+        // แสดงรายละเอียดเพิ่มเติมใน modal หรือหน้าใหม่ได้ที่นี่
+      }
+    </script>
+
+    <footer>
+      <p>&copy; 2024 ร้านค้าออนไลน์. สงวนลิขสิทธิ์.</p>
+    </footer>
+  </body>
 </html>
