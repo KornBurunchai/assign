@@ -195,7 +195,7 @@ color: rgb(208, 147, 208);
 }
 .cart-table {
   justify-content: center;
-  width: 1250px;
+  width: 1250px; /* กำหนดความกว้าง */
   margin: 0 auto;
   border-collapse: collapse;
   background-color: #f9e4ed; /* สีพื้นหลังของตาราง */
@@ -204,7 +204,7 @@ color: rgb(208, 147, 208);
 
 .cart-table th, .cart-table td {
   padding: 15px;
-  text-align: center;
+  text-align: center; 
   border-bottom: 1px solid #ddd;
 }
 
@@ -272,10 +272,10 @@ color: rgb(208, 147, 208);
   background-color: #ff69b4; /* สีปุ่ม */
   color: white;
   font-size: 18px;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
+  border: none; /* ลบขอบของปุ่ม */
+  border-radius: 5px; /* มุมโค้งของปุ่ม 5px */
+  cursor: pointer; /* เปลี่ยน cursor เป็นรูปมือเมื่อ hover */
+  transition: background-color 0.3s ease; /* เพิ่มเอฟเฟกต์เปลี่ยนสีพื้นหลังแบบลื่นใน 0.3 วินาทีเมื่อมีการ hover หรือคลิก */
   text-decoration: none;
   
 }
