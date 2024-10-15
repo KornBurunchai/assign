@@ -9,82 +9,15 @@ body {
     background-color: #f4f4f4;
     color: #333;
     line-height: 1.6;
-    
 }
+
 .navbar {
     display: flex;
-    /* border: 2px solid red; */
     background-color: #E396C4;
     color: #000;
     height: auto;
-  
-  }
-  
-  ul {
-    font-size: 16px;
-    width: 100%;
-    display: flex;
-    margin-top: 1rem;
-    justify-content: flex-end;
-    align-items: center;
-    list-style: none;
-  }
-  
-  ul li {
-    margin: 0 1rem;
-  }
-  
-  ul li a {
-    color: #fff;
-    text-decoration: none;
-  }
-  
-  ul li a:hover {
-    color: rgb(208, 147, 208);
-  }
-  
-  .all_body {
-    /* border: 2px solid red; */
-    display: flex;
-    height: 900px;
-  }
-  
-  .sidenav {
-    max-width: 15%;
-    z-index: 1;
-    left: 0;
-    background-color: #efd1e9;
-    overflow-x: hidden;
-    padding-top: 10px;
-    text-align: center;
-    /* border: 2px solid red; */
-  }
-  
-  /* .sidenav a {
-      padding: 6px 8px 6px 16px;
-      text-decoration: none;
-      font-size: 25px;
-      color: #818181;
-      display: block;
-    } */
-  
-  .sidenav a:hover {
-    color: #f1f1f1;
-  }
-  .container {
-    background-color: #f9d2e1;
-    padding: 20px;
-    height: 100vh;
 }
-/* .navbar {
-    display: flex;
-    /* border: 2px solid red; *
-    background-color: #E396C4;
-    color: #000;
-    height: auto;
-    
-  }
-  
+
 ul {
     font-size: 16px;
     width: 100%;
@@ -93,20 +26,48 @@ ul {
     justify-content: flex-end;
     align-items: center;
     list-style: none;
-  }
-.navbar ul li{
+}
+
+ul li {
     margin: 0 1rem;
 }
-.navbar ul li a{
+
+ul li a {
     color: #fff;
     text-decoration: none;
 }
-.navbar ul li a:hover {
-  color: rgb(208, 147, 208);
-} */
+
+ul li a:hover {
+    color: rgb(208, 147, 208);
+}
+
+.all_body {
+    display: flex;
+    height: 900px;
+}
+
+.sidenav {
+    max-width: 15%;
+    z-index: 1;
+    left: 0;
+    background-color: #efd1e9;
+    overflow-x: hidden;
+    padding-top: 10px;
+    text-align: center;
+}
+
+.sidenav a:hover {
+    color: #f1f1f1;
+}
+
+.container {
+    background-color: #f9d2e1;
+    padding: 20px;
+    height: 100%;
+}
 
 .form-container {
-    height: 100vh;
+    height: 100%;
     background-color: #f9d2e1;
     padding: 20px;
 }
@@ -145,26 +106,10 @@ ul {
     margin-bottom: 20px;
 }
 
-/* .address-section {
-    margin-bottom: 20px;
-} */
-
 .address-container {
     background-color: #fbcbdd;
-    padding: 10px; 
-    /* border-radius: 8px; 
-    display: flex;
-    flex-direction: column;  */
-}
-
-/* .address-box {
-    background-color: white;
-    border: 1px solid #ccc;
     padding: 10px;
-    display: flex;
-    justify-content: start;
-    align-items: center;
-} */
+}
 
 .address-info {
     background-color: white;
@@ -172,22 +117,21 @@ ul {
     padding: 20px;
     font-size: 18px;
     line-height: 50px;
-
 }
+
 .address-action-buttons {
-    /*display: flex; /* ใช้ Flexbox */
-    align-items: left; /* จัดให้อยู่ตรงกลางแนวตั้ง */
-    margin-top: 10px; /* เพิ่มระยะห่างด้านบน */
+    align-items: left;
+    margin-top: 10px;
 }
 
 .right-buttons {
-    margin-left: auto; /* ดันปุ่มขวาไปทางขวา */
-    display: flex; /* ใช้ Flexbox เพื่อให้ปุ่มในกลุ่มอยู่ติดกัน */
+    margin-left: auto;
+    display: flex;
 }
 
 .edit-btn,
 .delete-btn {
-    margin-left: 10px; /* เพิ่มระยะห่างระหว่างปุ่มแก้ไขและลบ */
+    margin-left: 10px;
 }
 
 .add-address-btn {
@@ -214,7 +158,7 @@ ul {
     background-color: #fbcbdd;
     border: none;
     cursor: pointer;
-    margin-left:8px;
+    margin-left: 8px;
     margin-top: 12px;
     margin-right: 10px;
 }
@@ -224,33 +168,28 @@ ul {
     background-color: #e91e63;
 }
 
-/* ปรับแต่งขนาดของ modal */
 .modal-dialog {
-    max-width: 600px; /* ปรับขนาดสูงสุดของ modal */
+    max-width: 600px;
 }
 
-/* ปรับสีพื้นหลังของ modal */
 .modal-content {
-    background-color: #f8f9fa; /* เปลี่ยนสีพื้นหลัง */
-    border-radius: 10px; /* ปรับให้มุมโค้งมน */
+    background-color: #f8f9fa;
+    border-radius: 10px;
 }
 
-/* ปรับสไตล์ของปุ่มปิด (x) */
 .modal-header .close {
-    color: #e91e63; /* เปลี่ยนสีปุ่มปิด */
-    font-size: 24px; /* ปรับขนาดตัวอักษร */
+    color: #e91e63;
+    font-size: 24px;
 }
 
-/* ปรับสไตล์ปุ่ม */
 .modal-footer .btn-primary {
-    background-color: #e91e63; /* เปลี่ยนสีปุ่มยืนยัน */
+    background-color: #e91e63;
     border-color: #e91e63;
 }
 
 .modal-footer .btn-secondary {
-    background-color: #6c757d; /* เปลี่ยนสีปุ่มยกเลิก */
+    background-color: #6c757d;
 }
-
 
 .form-buttons {
     display: flex;
