@@ -173,10 +173,15 @@ nav ul li a {
 }
 
 
+
 /* สำหรับหน้าจอขนาดเล็ก (มือถือ) จะปรับให้เรียง 2 รูปต่อแถว */
 @media (max-width: 767px) {
     .product-grid {
         grid-template-columns: repeat(2, 1fr); /* 2 รูปต่อแถว */
+    }
+    .modal-img img{
+        max-width: 50px; 
+        max-height: 50px;
     }
 }
 
@@ -185,6 +190,7 @@ nav ul li a {
     .product-grid {
         grid-template-columns: 1fr; /* 1 รูปต่อแถว */
     }
+    
 }
 
 
@@ -206,20 +212,22 @@ footer {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    max-width: 40%; /* ทำให้โมดอลไม่กว้างเกินไป */
+    max-width: 100%; /* ทำให้โมดอลไม่กว้างเกินไป */
     width: 450px;
-    max-height: 650px; /* จำกัดความสูง */
+    max-height: 90%; /* จำกัดความสูง */
     overflow-y: auto; /* เพิ่มการเลื่อนถ้าสูงเกิน */
-    background-color: rgb(245, 216, 242);
+    background-color: #fff;
     padding: 20px;
     box-shadow: 0 5px 15px rgba(0,0,0,0.3);
     z-index: 1000;
     border-radius: 8px;
+    border: 2px solid #E396C4;
     
 }
 
 .modal-content {
     width: 100%;
+    border: none;
 }
 
 .modal-toggle {
