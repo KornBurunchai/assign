@@ -5,10 +5,10 @@
 }
 
 body {
-    font-family: "Anuphan", sans-serif;
+    font-family: "Anuphan", sans-serif; /* กำหนดฟอนต์หลัก */
     background-color: #f4f4f4;
     color: #333;
-    line-height: 1.6;
+    line-height: 1.6; /* ความสูงของบรรทัด */
     
 }
 .navbar {
@@ -24,13 +24,13 @@ body {
     font-size: 16px;
     width: 100%;
     display: flex;
-    margin-top: 1rem;
-    justify-content: flex-end;
+    margin-top: 1rem; /* เว้นระยะด้านบน */
+    justify-content: flex-end; /* จัดเรียงรายการให้ไปทางขวา */
     align-items: center;
-    list-style: none;
+    list-style: none; /* ซ่อนสัญลักษณ์ bullet ในรายการ */
   }
 .navbar ul li{
-    margin: 0 1rem;
+    margin: 0 1rem; /* เว้นระยะห่างระหว่างรายการใน ul */
 }
 .navbar ul li a{
     color: #fff;
@@ -48,15 +48,15 @@ body {
 } */
 
 header h1 {
-    margin-bottom: 10px;
+    margin-bottom: 10px; /* เว้นระยะด้านล่างของ h1 */
 }
 
 nav ul {
-    list-style-type: none;
+    list-style-type: none; /* ซ่อน bullet ใน ul */
     margin: 0;
     padding: 0;
     display: flex;
-    justify-content: space-around;
+    justify-content: space-around; /* จัดรายการให้กระจายออก */
     background-color: #ffffff; /* สีพื้นหลังของ navbar */
 }
 
@@ -121,23 +121,23 @@ nav ul li a {
 
 .quantity-selector {
     display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 20px 0;
+    justify-content: center; /* จัดให้อยู่กึ่งกลาง */
+    align-items: center; /* จัดให้อยู่กึ่งกลางในแนวตั้ง */
+    margin: 20px 0;/* เว้นระยะด้านบนและล่าง */
 }
 
 .quantity-selector button {
     width: 30px;
     height: 30px;
     font-size: 18px;
-    cursor: pointer;
+    cursor: pointer; /* เปลี่ยนรูป cursor เมื่อ hover */
 }
 
 .quantity-selector input {
     width: 50px;
     text-align: center;
     font-size: 16px;
-    margin: 0 10px;
+    margin: 0 10px;/* เว้นระยะด้านบนและล่าง */
 }
 
 
@@ -159,7 +159,7 @@ nav ul li a {
 }
 
 .cart-icon {
-    position: absolute; 
+    position: absolute; /* กำหนดตำแหน่งของไอคอนตะกร้า */
     bottom: 10px;
     right: 10px;
 } 
@@ -169,7 +169,7 @@ nav ul li a {
 .cart-icon img {
     width: 40px;
     height: 40px;
-    cursor: pointer;
+    cursor: pointer; /* เปลี่ยนรูป cursor เมื่อ hover */
 }
 
 
@@ -197,8 +197,8 @@ nav ul li a {
 footer {
     background: #E396C4;
     color: #fff;
-    text-align: center;
-    padding: 10px 0;
+    text-align: center;  /* ให้หนังสืออยู่ตรงกลาง */
+    padding: 10px 0; /* เว้นระยะรอบด้าน */
     margin-top: 20px;
 }
 
@@ -211,13 +211,13 @@ footer {
     position: fixed;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%); /* กำหนดตำแหน่งกลาง */
     max-width: 100%; /* ทำให้โมดอลไม่กว้างเกินไป */
     width: 450px;
     max-height: 90%; /* จำกัดความสูง */
     overflow-y: auto; /* เพิ่มการเลื่อนถ้าสูงเกิน */
     background-color: #fff;
-    padding: 20px;
+    padding: 20px; /* เว้นระยะภายใน modal */
     box-shadow: 0 5px 15px rgba(0,0,0,0.3);
     z-index: 1000;
     border-radius: 8px;
@@ -226,7 +226,7 @@ footer {
 }
 
 .modal-content {
-    width: 100%;
+    width: 100%; /* กำหนดความกว้างเต็มของเนื้อหา modal */
     border: none;
 }
 
@@ -235,11 +235,11 @@ footer {
 }
 
 .close {
-    position: absolute;
+    position: absolute; /* ตำแหน่งปุ่มปิด modal */
     top: 10px;
     right: 10px;
-    cursor: pointer;
-    font-size: 1.5rem;
+    cursor: pointer; /* เปลี่ยนรูป cursor เมื่อ hover */
+    font-size: 1.5rem; /* ขนาดของปุ่มปิด */
 }
 .modal-img{
     text-align: center;
@@ -268,59 +268,11 @@ footer {
     padding: 20px;
 }
 
-/* Sidebar for category list */
-.sidebar {
-    width: 200px;
-    background-color: #f3f3f3; /* สีพื้นหลังของแถบประเภทสินค้า */
-    padding: 20px;
-    border-radius: 10px;
-}
-
-.sidebar h2 {
-    font-size: 18px;
-    margin-bottom: 15px;
-}
-
-.category-list {
-    list-style: none;
-    padding: 0;
-}
-
-.category-list li {
-    margin-bottom: 10px;
-}
-
-.category-list li a {
-    display: flex;
-    align-items: center;
-    text-decoration: none;
-    color: #333;
-    background-color: #fff;
-    padding: 10px;
-    border-radius: 5px;
-    border: 1px solid #ddd;
-}
-
-.category-list li a:hover {
-    background-color: #e0dcdc;
-}
-
-.category-list li img {
-    width: 30px;
-    margin-right: 10px;
-}
-
-.carousel-item img {
-    width: 100%;
-    height: 400px;
-    object-fit: cover;
-  }
-
 .main{
     display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-    justify-content: flex-start;
-    margin-left: 20px;
+    flex-wrap: wrap; /* ทำให้รายการย่อมพับลงมาเมื่อพื้นที่ไม่พอ */
+    gap: 20px; /* เว้นระยะระหว่างรายการ */
+    justify-content: flex-start; /* จัดรายการให้อยู่ทางซ้าย */
+    margin-left: 20px; /* เว้นระยะห่างด้านซ้าย */
     flex-grow: 1;
 }

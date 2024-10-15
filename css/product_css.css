@@ -1,5 +1,5 @@
 * {
-  font-family: "Anuphan", sans-serif;
+  font-family: "Anuphan", sans-serif; /* กำหนดฟอนต์หลัก */
 }
 
 
@@ -22,18 +22,18 @@ ul {
   width: 100%;
   display: flex;
   margin-top: 1rem;
-  justify-content: flex-end;
+  justify-content: flex-end; /* ให้ navber อยู่ด้านซ้าย */
   align-items: center;
-  list-style: none;
+  list-style: none; /* ไม่แสดงจุดหัวข้อด้านหน้า */
 }
 
 ul li {
-  margin: 0 1rem;
+  margin: 0 1rem; /* ระยะห่างกัน 1rem */
 }
 
 ul li a {
   color: #fff;
-  text-decoration: none;
+  text-decoration: none; /* ไม่แสดงเส้นใต้ลิงค์ */
 }
 
 ul li a:hover {
@@ -93,7 +93,7 @@ ul li a:hover {
 
 footer {
   padding: 1rem;
-  text-align: center;
+  text-align: center; /* ให้หนังสืออยู่ตรงกลาง */
   /* border: 2px solid red; */
   background-color: #E396C4;
   color: #fff;
@@ -102,17 +102,17 @@ footer {
 /* product line */
 .product-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(4, 1fr); /* 4 รูปต่อแถว */
   gap: 20px;
   margin-top: 20px;
 
 }
 
 .product {
-  text-align: center;
+  text-align: center; 
   position: relative; /* สำหรับจัดการตำแหน่งไอคอน */
   border: 1px solid #e0e0e0;
-  padding: 20px;
+  padding: 20px; /* กำหนดระยะห่าง */
   border-radius: 8px;
   background-color: #fff;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -178,7 +178,7 @@ footer {
 } 
 
 
-
+/* กำหนดขนาดไอคอล */
 .cart-icon img {
   width: 40px;
   height: 40px;
@@ -194,13 +194,13 @@ footer {
   position: fixed;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%); /* กำหนดตำแหน่งกลาง */
   max-width: 100%; /* ทำให้โมดอลไม่กว้างเกินไป */
   width: 450px;
   max-height: 90%; /* จำกัดความสูง */
   overflow-y: auto; /* เพิ่มการเลื่อนถ้าสูงเกิน */
   background-color: #fff;
-  padding: 20px;
+  padding: 20px; /* เว้นระยะภายใน modal */
   box-shadow: 0 5px 15px rgba(0,0,0,0.3);
   z-index: 1000;
   border-radius: 8px;
@@ -221,11 +221,11 @@ footer {
 }
 
 .close {
-  position: absolute;
+  position: absolute; /* ตำแหน่งปุ่มปิด modal */
   top: 10px;
   right: 10px;
-  cursor: pointer;
-  font-size: 1.5rem;
+  cursor: pointer; /* เปลี่ยนรูป cursor เมื่อ hover */
+  font-size: 1.5rem; /* ขนาดของปุ่มปิด */
 }
 
 .details{
@@ -241,17 +241,19 @@ footer {
 .details-buttom{
   display: flex;
 }
+/* กำหนดตำแหน่งไอคอลตะกล้า */
 .icon{
   margin-left: auto;
   margin-top: 12px;
 }
+/* กำหนดขนาดคอล */
 .icon img {
   width: 40px;
   height: 40px;
   cursor: pointer;
   
 }
-
+/* กำหนดตำแหน่งไอคอลตะกล้า */
 .cart-icon {
   position: absolute; 
   bottom: 10px;
@@ -259,7 +261,7 @@ footer {
 } 
 
 
-
+/* กำหนดขนาดไอคอลตะกล้า */
 .cart-icon img {
   width: 40px;
   height: 40px;
@@ -302,7 +304,7 @@ footer {
     width: 100%; /* ให้ div ด้านในกว้างเต็มที่ */
 }
 .main{
-  max-height: 100%;
+  max-height: 100%; 
 }
 .container{
   height: auto;
