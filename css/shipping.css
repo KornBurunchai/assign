@@ -71,6 +71,11 @@ body {
   .sidenav a:hover {
     color: #f1f1f1;
   }
+  .container {
+    background-color: #f9d2e1;
+    padding: 20px;
+    height: 100vh;
+}
 /* .navbar {
     display: flex;
     /* border: 2px solid red; *
@@ -101,6 +106,7 @@ ul {
 } */
 
 .form-container {
+    height: 100vh;
     background-color: #f9d2e1;
     padding: 20px;
 }

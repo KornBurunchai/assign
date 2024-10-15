@@ -74,7 +74,13 @@ ul li a:hover {
   /* Increased text to enable scrolling */
   padding: 0px 10px;
   max-width: 85%;
+
   /* border: 2px solid red; */
+}
+
+.container {
+  padding: 20px;
+  height: 100vh;
 }
 
 .headline {

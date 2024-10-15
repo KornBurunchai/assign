@@ -44,6 +44,7 @@ ul {
 .container {
     background-color: #f9d2e1;
     padding: 20px;
+    height: 100vh;
 }
 
 .info-box {
