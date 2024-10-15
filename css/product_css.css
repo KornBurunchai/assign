@@ -22,18 +22,18 @@ ul {
   width: 100%;
   display: flex;
   margin-top: 1rem;
-  justify-content: flex-end;
+  justify-content: flex-end; /* ให้ navber อยู่ด้านซ้าย */
   align-items: center;
-  list-style: none;
+  list-style: none; /* ไม่แสดงจุดหัวข้อด้านหน้า */
 }
 
 ul li {
-  margin: 0 1rem;
+  margin: 0 1rem; /* ระยะห่างกัน 1rem */
 }
 
 ul li a {
   color: #fff;
-  text-decoration: none;
+  text-decoration: none; /* ไม่แสดงเส้นใต้ลิงค์ */
 }
 
 ul li a:hover {
@@ -178,7 +178,7 @@ footer {
 } 
 
 
-
+/* กำหนดขนาดไอคอล */
 .cart-icon img {
   width: 40px;
   height: 40px;
@@ -259,7 +259,7 @@ footer {
 } 
 
 
-
+/* กำหนดขนาดไอคอล */
 .cart-icon img {
   width: 40px;
   height: 40px;
