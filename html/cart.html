@@ -28,24 +28,30 @@
         <li><a href="confirm-payment.html">คำสั่งซื้อ</a></li>
       </ul>
     </section>
+    
     <section class="all_body">
-      <section class="cret-table">
-        <table class="cart-table">
-          <thead>
-            <tr>
-              <th>รูปสินค้า</th>
-              <th>รายการสินค้า</th>
-              <th>ราคา</th>
-              <th>จำนวน</th>
-              <th>ราคารวม</th>
-              <th>แก้ไข</th>
-            </tr>
-          </thead>
-          <tbody class="cart-container">
-            <!-- รายการสินค้าจะแสดงที่นี่ -->
-          </tbody>
-        </table>
-      </section>
+
+      <!-- Container -->
+      <div class="container">
+        <section class="cret-table" style="overflow: auto;">
+          <table class="cart-table">
+            <thead>
+              <tr>
+                <th>รูปสินค้า</th>
+                <th>รายการสินค้า</th>
+                <th>ราคา</th>
+                <th>จำนวน</th>
+                <th>ราคารวม</th>
+                <th>แก้ไข</th>
+              </tr>
+            </thead>
+            <tbody class="cart-container">
+              <!-- รายการสินค้าจะแสดงที่นี่ -->
+            </tbody>
+          </table>
+        </section>
+      </div>
+
       <div class="total-section">
         ยอดรวมสินค้า: <span id="total-price">฿0.00</span>
       </div>
