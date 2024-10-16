@@ -195,7 +195,7 @@ color: rgb(208, 147, 208);
 }
 .cart-table {
   justify-content: center;
-  width: 1250px; /* กำหนดความกว้าง */
+  width: 1500px; /* กำหนดความกว้าง */
   margin: 0 auto;
   border-collapse: collapse;
   background-color: #f9e4ed; /* สีพื้นหลังของตาราง */

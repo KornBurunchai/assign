@@ -197,7 +197,7 @@ color: rgb(208, 147, 208);
 }
 .cart-table {
   justify-content: center;
-  width: 1250px; /* กำหนดความกว้าง */
+  width: 1500px; /* กำหนดความกว้าง */
   margin: 0 auto;
   border-collapse: collapse;
 
@@ -255,7 +255,7 @@ color: rgb(208, 147, 208);
   font-size: 20px;
   font-weight: bold;
   color: #333;
-  margin-top: 20px;
+  margin-top: 20px; 
   width: 100%;
   max-width: 1250px; /* กำหนดให้มีขนาดเท่ากับตาราง */
 }
